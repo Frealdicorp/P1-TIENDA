@@ -3,5 +3,5 @@
 - [Historias de Usuario](https://docs.google.com/document/d/1VqxsAhTbE_TK1kgwS508VNXg0MdRbtQs/edit)
 
 ## Algo
-- [Caso de Uso](https://app.diagrams.net/)
-- [Diagrma de CLases]()
+- [Caso de Uso](https://app.diagrams.net/?src=about#HFrealdicorp%2FP1-TIENDA%2Fdefre%2Fdoc%2Fcaso_de_uso%2Fcaso_de_uso_p5-tienda.drawio)
+- [Diagrma de CLases](https://app.diagrams.net/?src=about#HFrealdicorp%2FP1-TIENDA%2Fdefre%2Fdoc%2Fcaso_de_uso%2Fcaso_de_uso_p5-tienda.drawio)
