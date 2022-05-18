@@ -1,0 +1,40 @@
+:root{
+    --color-violeta: #6E65FE;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *::before, *::after{
+    position: relative;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    font-size: 1rem;
+}
+
+h1{font-size: 2rem;}
+
+h2{font-size: 1.75rem;}
+
+h3{font-size: 1.4rem;}
+
+input, select{
+    outline: none;
+    border: 0;
+    background-color: transparent;
+}
+
+select{
+    appearance: none;
+}
+
+a{
+    border: 0;
+    text-decoration: none;
+}

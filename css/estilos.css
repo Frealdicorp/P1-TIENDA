@@ -1,0 +1,215 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Raleway:wght@100;700&display=swap');
+.login{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(180deg, var(--color-violeta) 0%, #A8A3FE 20%,white 60%);
+}
+
+.login__img{
+    height: 42%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login{
+    position: absolute;
+    width: 100%;
+    height: 58%;
+    background-color: white;
+    bottom: 0;
+    border-radius: 60px;
+    padding: 30px 20px;
+}
+
+.form-login__titulo{
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+
+.form-login-principal{
+    margin: 20px 10px;
+}
+
+.form-login-principal__titulo{
+    font-family: 'Mulish';
+    color: #9E9E9E;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.form-login-principal__items{
+    width: 100%;
+    height: 50px;
+    margin: 10px 0 4px;
+}
+
+.form-login-principal__items input,
+.form-login-principal input{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    font-size: 1.1rem;
+    padding: 0 20px;
+    color: #9E9E9E;
+    font-weight: bold;
+    font-family: 'Mulish', sans-serif;
+}
+
+.form-login-principal__items i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    color: #9e9e9e;
+    font-size: 1.4rem;
+
+}
+
+.form-login-principal input::placeholder{
+    color: #9E9E9E;
+    font-weight: bold;
+    font-family: 'Mulish', sans-serif;
+}
+
+.form-login-principal__aviso{
+    color: red;
+    display: flex;
+    align-items: end;
+    padding: 0 5px;
+    margin: 0 0 10px;
+}
+
+.form-login-principal__aviso--hidden{
+    visibility: hidden;
+}
+
+.form-login-principal__aviso p{
+    font-size: .8rem;
+    padding-left: 5px;
+}
+
+
+.form-login-principal a{
+    color: #0F9980;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.form-login-principal > input[type="submit"]{
+    height: 50px;
+    background-image: linear-gradient(180deg, var(--color-violeta), #A8A3FE);
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #4D4D4D;
+    font-size: 1.15rem;
+    font-family: sans-serif;
+    margin-top: 20px;
+}
+
+.cabezera{
+    width: 100%;
+    height: 120px;
+    background-image: linear-gradient(90deg, var(--color-violeta), #3A7FFF);
+}
+
+.cabezera__contenido{
+    color: white;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.cabezera__contenido img{
+    height: 80%;
+}
+
+.cabezera__contenido h3{
+    font-family: 'Mulish';
+}
+
+.cabezera__contenido i{
+    font-size: 2.25rem;
+}
+
+.principal{
+    width: 100%;
+    height: auto;
+    top: -60px;
+    background-color: #FDFDFD;
+    border-radius: 60px 60px 0 0;
+}
+
+
+/*=====| Estilos de formulario |=====*/
+
+.formulario{
+    width: 100%;
+    height: auto;
+    padding: 30px;
+}
+
+.formulario__items{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.formulario__items:first-child{
+    margin: 0 0 30px 0;
+}
+
+.formulario__items input,
+.formulario__items select,
+.formulario input{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    font-size: 1.1rem;
+    padding: 0 20px;
+    color: #9E9E9E;
+    font-weight: bold;
+    font-family: 'Mulish', sans-serif;
+}
+
+.formulario__items select::-ms-expand {
+    display: none;
+}
+
+.formulario__items i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    color: #9e9e9e;
+    font-size: 1.75rem;
+}
+
+.formulario__items input::placeholder{
+    color: #9E9E9E;
+    font-weight: bold;
+    font-family: 'Mulish', sans-serif;
+}
+
+.formulario > input[type="submit"]{
+    height: 50px;
+    background-image: linear-gradient(180deg, var(--color-violeta), #A8A3FE);
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #4D4D4D;
+    font-size: 1.15rem;
+    font-family: sans-serif;
+}

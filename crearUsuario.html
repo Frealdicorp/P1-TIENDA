@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Usuario</title>
+    <link rel="stylesheet" href="css/estilosGenerales.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/css/all.min.css">
+</head>
+<body>
+    <header class="cabezera">
+        <div class="cabezera__contenido">
+            <img src="imagenes/img-logo.svg" alt="" srcset="">               
+            <h3>CREAR USUARIO</h3>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
+    <main class="principal">
+        <form class="formulario" action="" method="post">
+            <div class="formulario__items">
+                <input type="text" name="" id="" placeholder="Nombre" data-regex="^([a-zA-ZñÑáÁÉéÍíÓóÚú*-_]{3,40})$">
+            </div>
+            <div class="formulario__items">
+                <input type="text" name="" id="" placeholder="Apellido Paterno" data-regex="^([a-zA-ZñÑáÁÉéÍíÓóÚú*-_]{3,40})$">
+            </div>
+            <div class="formulario__items">
+                <input type="text" name="" id="" placeholder="Apellido Materno" data-regex="^([a-zA-ZñÑáÁÉéÍíÓóÚú*-_]{3,40})$">
+            </div>
+            <div class="formulario__items">
+                <input type="number" name="" id="" placeholder="C.I." data-regex="^([0-9]{8,10})$">
+            </div>
+            <div class="formulario__items">
+                <input type="tel" name="" id="" placeholder="Telefono o Celular" data-regex="^([0-9]{8,10})$">
+            </div>
+            <div class="formulario__items">
+                <select name="" id="">
+                    <option value="">Vendedor</option>
+                    <option value="">Administrador</option>
+                </select>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <input type="submit" value="Crear Usuario">
+        </form>
+    </main>
+    <nav>
+
+    </nav>
+    <script src="js/index.js"></script>
+</body>
+</html>
