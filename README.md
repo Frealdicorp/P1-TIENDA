@@ -4,4 +4,4 @@
 
 ## Algo
 - [Caso de Uso](https://app.diagrams.net/?src=about#HFrealdicorp%2FP1-TIENDA%2Fdefre%2Fdoc%2Fcaso_de_uso%2Fcaso_de_uso_p5-tienda.drawio)
-- [Diagrma de CLases](https://app.diagrams.net/?src=about#HFrealdicorp%2FP1-TIENDA%2Fdefre%2Fdoc%2Fcaso_de_uso%2Fcaso_de_uso_p5-tienda.drawio)
+- [Diagrama de Clases](https://app.diagrams.net/?src=about#HFrealdicorp%2FP1-TIENDA%2Fdefre%2Fdoc%2Fcaso_de_uso%2Fdiagrama_de_clase_p5-tienda.drawio)
