@@ -24,10 +24,19 @@ h2{font-size: 1.75rem;}
 
 h3{font-size: 1.4rem;}
 
+p{
+    font-family: 'Mulish', sans-serif;
+}
+
 input, select{
     outline: none;
     border: 0;
     background-color: transparent;
+}
+
+input:-webkit-autofill{
+    -webkit-text-fill-color: #9E9E9E !important;
+    -webkit-box-shadow: 0 0 0 30px #f3f3f3 inset !important;
 }
 
 select{
@@ -37,4 +46,8 @@ select{
 a{
     border: 0;
     text-decoration: none;
+}
+
+li{
+    list-style: none;
 }

@@ -1,77 +1,106 @@
+import crearElemento from "./dom/crear_elemento.js";
+import mostrarContraseña from "./dom/mostrar_contraseña.js";
+
 const d = document;
-console.log('Hola');
 
-const icono = document.querySelector('.form-login-principal__items i');
-
-d.addEventListener('click', e =>{
-    if(e.target == icono){
-        let inputPass = d.querySelector('.item-password input');
-        icono.classList.remove(icono.className.substring(4));
-        if(inputPass.type == 'password'){
-            inputPass.type = 'text';
-            icono.classList.add('fa-eye-slash');
-        }else{
-            inputPass.type = 'password';
-            icono.classList.add('fa-eye');
-        }
-
-    }
-});
+mostrarContraseña('.formulario__items .formulario__items-input > i');
 
 const submit = d.querySelector('.form-login-principal');
 
+const regex = function(elemento){
+    let regex = new RegExp(elemento.dataset.regex);
+    return regex.test(elemento.value) ?  true : false;
+}
+
+function borrarMensaje(elemento){
+    let $elemento = elemento.querySelectorAll(".form-login-principal__aviso");
+    if($elemento != null){
+        $elemento.forEach(elem => {
+            elem.remove();
+        });
+    } 
+}
+
 d.addEventListener('submit', e => {
     e.preventDefault();
-    if(e.target.matches('.form-login-principal')){
+    if(e.target.matches('.formulario--login')){
+        borrarMensaje(e.target);
         let cont = 0;
-        const inputs = e.target.querySelectorAll('input[type=text], input[type=password]');
+        const inputs = e.target.querySelectorAll('.formulario__items input')
         inputs.forEach(input => {
-            let regex = new RegExp(input.dataset.regex);
-            if(regex.test(input.value)){
-                cont++;
-            }
+            if(regex(input)) cont++;
         });
         if(cont == 2){
             console.log('Hola');
         }else{
-            d.querySelector('.form-login-principal__aviso').classList.remove('form-login-principal__aviso--hidden')
-            setTimeout(() => {
-                d.querySelector('.form-login-principal__aviso').classList.add('form-login-principal__aviso--hidden')
-            }, 2000);
-        }
-        /*let username = submit.querySelector('[name=username]');
-        let password = submit.querySelector('[name=password]')
-        let regex = /^([0-9]{8,10})$/g;
-        let regex1 = /^([a-zA-Z0-9ñÑ*-_]{8,16})$/g;
-        if(regex.test(username.value) && regex1.test(password.value)){
-            console.log('hola');
-        }
-        else{
-            d.querySelector('.form-login-principal__aviso').classList.remove('form-login-principal__aviso--hidden')
-            password.value = "";
-            setTimeout(() => {
-                d.querySelector('.form-login-principal__aviso').classList.add('form-login-principal__aviso--hidden')
-            }, 2000);
-        }*/
-        
+            let icono = crearElemento('i',{clases : ['fas','fa-exclamation-circle']});
+            let parrafo = crearElemento('p',{contenido : 'Usuario y/o contraseña no válida'})
+            let aviso = crearElemento('div',{clases : ["form-login-principal__aviso"]});
+            inputs[inputs.length - 1].parentElement.insertAdjacentElement("afterend", aviso);
+            aviso.insertAdjacentElement("afterbegin",parrafo);
+            aviso.insertAdjacentElement("afterbegin",icono);
+            setTimeout(() => { borrarMensaje(e.target); }, 3000);
+        }       
     }
-    if(e.target.matches(".formulario")){
+    if(e.target.matches(".formulario--crearUsuario")){
+        borrarMensaje(e.target);
         let cont = 0;
-        const inputs = e.target.querySelectorAll('input[type=text], input[type=number], input[type=tel]');
+        const inputs = e.target.querySelectorAll('.formulario__items input');
         inputs.forEach(input => {
-            let regex = new RegExp(input.dataset.regex);
-            if(regex.test(input.value)){
+            if(!regex(input)){
                 cont++;
+                let icono = crearElemento('i',{clases : ['fas','fa-exclamation-circle']});
+                let parrafo = crearElemento('p',{contenido : input.title || 'error'})
+                let aviso = crearElemento('div',{clases : ["form-login-principal__aviso"]});
+                input.parentElement.parentElement.insertAdjacentElement("beforeend", aviso);
+                aviso.insertAdjacentElement("afterbegin",parrafo);
+                aviso.insertAdjacentElement("afterbegin",icono);
             }
         });
-        if(cont == inputs.length - 1){
-            console.log('Hola');
+        if(cont == 0){
+            alert("El formulario a sido enviado, espere.....")
         }else{
-            console.log('no');
-            /* d.querySelector('.form-login-principal__aviso').classList.remove('form-login-principal__aviso--hidden')
-            setTimeout(() => {
-                d.querySelector('.form-login-principal__aviso').classList.add('form-login-principal__aviso--hidden')
-            }, 2000); */
+            console.log('error');
         }
     }
-})
+});
+
+d.addEventListener('keyup', e => {
+    if(e.target.matches('.formulario--resetContraseña .formulario__items input')){
+        borrarMensaje(e.target.parentElement.parentElement)
+        if(e.target.placeholder == 'Repetir nueva contraseña'){
+            let elemHermano = e.target.parentElement.parentElement.previousElementSibling.querySelector('input');
+            if(e.target.value != elemHermano.value){
+                let icono = crearElemento('i',{clases : ['fas','fa-exclamation-circle']});
+                let parrafo = crearElemento('p',{contenido : 'Las contraseñas deben ser iguales'})
+                let aviso = crearElemento('div',{clases : ["form-login-principal__aviso"]});
+                e.target.parentElement.parentElement.insertAdjacentElement("beforeend", aviso);
+                aviso.insertAdjacentElement("afterbegin",parrafo);
+                aviso.insertAdjacentElement("afterbegin",icono);
+                /* setTimeout(() => { borrarMensaje(e.target.parentElement.parentElement); }, 1300); */
+            }
+        }else{
+            if(!regex(e.target)){
+                let icono = crearElemento('i',{clases : ['fas','fa-exclamation-circle']});
+                let parrafo = crearElemento('p',{contenido : e.target.title || 'error'})
+                let aviso = crearElemento('div',{clases : ["form-login-principal__aviso"]});
+                e.target.parentElement.parentElement.insertAdjacentElement("beforeend", aviso);
+                aviso.insertAdjacentElement("afterbegin",parrafo);
+                aviso.insertAdjacentElement("afterbegin",icono);
+                /* setTimeout(() => { borrarMensaje(e.target.parentElement.parentElement);}, 1300); */
+            }
+        }      
+    }
+    if(e.target.matches('.formulario--crearUsuario .formulario__items input')){
+        borrarMensaje(e.target.parentElement.parentElement)
+        if(!regex(e.target)){
+            let icono = crearElemento('i',{clases : ['fas','fa-exclamation-circle']});
+            let parrafo = crearElemento('p',{contenido : e.target.title || 'error'})
+            let aviso = crearElemento('div',{clases : ["form-login-principal__aviso"]});
+            e.target.parentElement.parentElement.insertAdjacentElement("beforeend", aviso);
+            aviso.insertAdjacentElement("afterbegin",parrafo);
+            aviso.insertAdjacentElement("afterbegin",icono);
+            /* setTimeout(() => { borrarMensaje(e.target.parentElement.parentElement);}, 1300); */
+        }
+    }
+});

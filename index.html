@@ -11,7 +11,7 @@
 </head>
 <body>
     <main class="login">
-        <div class="login__img">
+        <div class="login__img flex-center-center">
             <svg width="197" height="250" viewBox="0 0 197 250" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="30" width="137.097" height="250" rx="13" fill="#242D3C"/>
                 <rect x="41" y="16" width="115" height="207" fill="#FFFAE9"/>
@@ -72,24 +72,24 @@
         </div>
         <div class="form-login">
             <h2 class="form-login__titulo">Bienvenido de vuelta</h2>
-            <form class="form-login-principal" action="" method="post">
-                <legend class="form-login-principal__titulo">Ingresa tus credenciales</legend>
-                <div class="form-login-principal__items">
-                    <input type="text" name="username" placeholder="Usuario" data-regex="^([0-9]{8,10})$"> <br>
+            <form class="formulario formulario--login" action="" method="post">
+                <legend class="formulario--login__titulo">Ingresa tus credenciales</legend>
+                <div class="formulario__items">
+                    <div class="formulario__items-input">
+                        <input type="text" name="username" placeholder="Usuario"  data-regex="^([0-9]{8,10})$" required> <br>
+                    </div>
                 </div>
-                <div class="form-login-principal__items item-password">
-                    <input type="password" name="password" placeholder="Contraseña" data-regex="^([a-zA-Z0-9ñÑ*-_]{8,16})$">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="form-login-principal__aviso form-login-principal__aviso--hidden">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <p>Usuario y/o contraseña no válida</p>
+                <div class="formulario__items">
+                    <div class="formulario__items-input">
+                        <input type="password" name="password" placeholder="Contraseña" data-regex="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[*_\-])\S{8,16}$" required>
+                        <i class="fas fa-eye"></i>
+                    </div>
                 </div>
                 <a href="#">¿Olvidaste tu contraseña?</a>
-                <input class="form-login-principal__submit" type="submit" value="Inicia Sesión">
+                <input type="submit" value="Inicia Sesión">
             </form>
         </div>
     </main>
-    <script src="js/index.js"></script>
+    <script src="js/index.js" type="module"></script>
 </body>
 </html>
